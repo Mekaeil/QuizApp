@@ -6,7 +6,7 @@ You can see and find the [diagram in draw.io link](https://drive.google.com/file
 
 <p style="width: 30em;text-align:left;">
 
-![image](https://github.com/Mekaeil/QuizApp/blob/master/public/images/mekaeils-package/images/QuizApp_diagram.png)
+![image](https://github.com/Mekaeil/QuizApp/blob/master/public/images/QuizApp_diagram.png)
 
 </p>
 
