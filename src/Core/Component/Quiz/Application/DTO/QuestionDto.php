@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace QuizApp\Core\Component\Quiz\Domain;
+namespace QuizApp\Core\Component\Quiz\Application\DTO;
 
 use QuizApp\Core\Component\Quiz\Application\Enum\QuestionType;
 
-final class QuestionDomain
+final class QuestionDto
 {
     private string $title;
 
