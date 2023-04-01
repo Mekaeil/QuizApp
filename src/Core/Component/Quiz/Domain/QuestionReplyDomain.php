@@ -17,5 +17,4 @@ final class QuestionReplyDomain
     {
         return $this->content;
     }
-
 }

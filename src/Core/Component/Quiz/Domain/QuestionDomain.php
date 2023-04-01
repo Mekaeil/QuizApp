@@ -18,8 +18,7 @@ final class QuestionDomain
         string $title,
         QuestionType $type,
         bool $status
-    )
-    {
+    ) {
         $this->title = $title;
         $this->type = $type;
         $this->status = $status;
@@ -39,5 +38,4 @@ final class QuestionDomain
     {
         return $this->status;
     }
-
 }

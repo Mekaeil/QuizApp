@@ -19,8 +19,7 @@ final class QuestionCategoryDomain
         string $slug,
         string $description,
         bool $status
-    )
-    {
+    ) {
         $this->name = $name;
         $this->slug = $slug;
         $this->description = $description;
@@ -46,5 +45,4 @@ final class QuestionCategoryDomain
     {
         return $this->status;
     }
-
 }

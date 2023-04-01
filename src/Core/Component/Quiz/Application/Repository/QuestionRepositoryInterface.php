@@ -12,5 +12,4 @@ interface QuestionRepositoryInterface
     public function create(QuestionDto $questionDto): QuestionDomain;
 
     public function findById(int $questionId): QuestionDomain;
-
 }

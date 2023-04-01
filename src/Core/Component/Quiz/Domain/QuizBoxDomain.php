@@ -16,8 +16,7 @@ final class QuizBoxDomain
         string $subject,
         string $description,
         bool $status
-    )
-    {
+    ) {
         $this->subject = $subject;
         $this->description = $description;
         $this->status = $status;
@@ -37,5 +36,4 @@ final class QuizBoxDomain
     {
         return $this->status;
     }
-
 }

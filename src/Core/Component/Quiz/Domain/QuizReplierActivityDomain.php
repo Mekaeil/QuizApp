@@ -22,8 +22,7 @@ final class QuizReplierActivityDomain
         int $scheduled_id,
         string $reply_content,
         bool $is_correct
-    )
-    {
+    ) {
         $this->user_id = $user_id;
         $this->question_id = $question_id;
         $this->scheduled_id = $scheduled_id;
@@ -31,9 +30,6 @@ final class QuizReplierActivityDomain
         $this->is_correct = $is_correct;
     }
 
-    /**
-     * @return int
-     */
     public function getUserId(): int
     {
         return $this->user_id;
@@ -58,5 +54,4 @@ final class QuizReplierActivityDomain
     {
         return $this->is_correct;
     }
-
 }

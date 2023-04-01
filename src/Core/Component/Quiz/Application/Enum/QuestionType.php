@@ -11,4 +11,11 @@ enum QuestionType: string
     case MULTI_SELECT = 'MULTI_SELECT';
 
     case TEXT = 'TEXT';
+
+    public static function toArray(): array
+    {
+        return array_map(function ($type) {
+            return $type->value;
+        }, self::cases());
+    }
 }

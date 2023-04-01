@@ -47,6 +47,9 @@ docker exec -it quiz-app php artisan key:generate
 docker exec -it quiz-app php artisan migrate
 ```
 
+# API Documentation
+You can clone the repository via [Insomnia](https://insomnia.rest/download) and then you'll see all the endpoints in it.
+
 # Contributing
 If you want to contribute in this repository you can use the below commands:
 

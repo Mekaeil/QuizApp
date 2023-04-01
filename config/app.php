@@ -194,7 +194,7 @@ return [
         // QuizApp\Infrastructure\Framework\Laravel\Providers\BroadcastServiceProvider::class,
         QuizApp\Infrastructure\Framework\Laravel\Providers\EventServiceProvider::class,
         QuizApp\Infrastructure\Framework\Laravel\Providers\RouteServiceProvider::class,
-
+        \QuizApp\Infrastructure\Quiz\Provider\QuizServiceProvider::class,
     ],
 
     /*

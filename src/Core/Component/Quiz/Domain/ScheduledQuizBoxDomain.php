@@ -19,8 +19,7 @@ final class ScheduledQuizBoxDomain
         int $quizBoxId,
         QuizBoxReplyType $replyType,
         CarbonImmutable $dueDate
-    )
-    {
+    ) {
         $this->quizBoxId = $quizBoxId;
         $this->replyType = $replyType;
         $this->dueDate = $dueDate;
@@ -40,5 +39,4 @@ final class ScheduledQuizBoxDomain
     {
         return $this->dueDate;
     }
-
 }

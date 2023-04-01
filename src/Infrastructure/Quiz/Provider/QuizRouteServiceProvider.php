@@ -4,19 +4,14 @@ declare(strict_types=1);
 
 namespace QuizApp\Infrastructure\Quiz\Provider;
 
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\ServiceProvider;
 
 final class QuizRouteServiceProvider extends ServiceProvider
 {
     protected string $moduleWebNamespace = 'QuizApp\Presentation\Quiz\Web\Controller';
 
     protected string $moduleApiNamespace = 'QuizApp\Presentation\Quiz\Api\Rest';
-
-    public function boot()
-    {
-        parent::boot();
-    }
 
     public function map()
     {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace QuizApp\Core\Component\Quiz\Application\DTO;
 
+use Illuminate\Http\Request;
 use QuizApp\Core\Component\Quiz\Application\Enum\QuestionType;
 
 final class QuestionDto
@@ -14,15 +15,14 @@ final class QuestionDto
 
     private bool $status;
 
-    public function __construct(
-        string $title,
-        QuestionType $type,
-        bool $status
-    )
+    public static function fromRequest(Request $request): QuestionDto
     {
-        $this->title = $title;
-        $this->type = $type;
-        $this->status = $status;
+        $self = (new self);
+        $self->title = $request->input('title');
+        $self->type = QuestionType::from($request->input('type'));
+        $self->status = $request->input('status') ?? true;
+
+        return $self;
     }
 
     public function getTitle(): string
@@ -35,9 +35,8 @@ final class QuestionDto
         return $this->type;
     }
 
-    public function isStatus(): bool
+    public function getStatus(): bool
     {
         return $this->status;
     }
-
 }
