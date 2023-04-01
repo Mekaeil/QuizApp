@@ -1,0 +1,69 @@
+_id: req_bf04687806d3441b8f69fb81dcba7a6b
+type: Request
+parentId: fld_ec457b84069e46368dc64634886c7ece
+modified: 1680366958955
+created: 1680365879551
+url: "{{ _.base_url }}/{{ _.v1 }}/quiz/question/create"
+name: Create
+description: |-
+  # Response
+
+  ```
+  {
+  	"title": "First question",
+  	"type": "SELECT",
+  	"status": true
+  }
+  ```
+
+  # Validation Errors
+  ```
+  {
+  	"message": "The title field is required. (and 1 more error)",
+  	"errors": {
+  		"title": [
+  			"The title field is required."
+  		],
+  		"type": [
+  			"The type field is required."
+  		]
+  	}
+  }
+
+
+
+  {
+  	"message": "The selected type is invalid.",
+  	"errors": {
+  		"type": [
+  			"The selected type is invalid."
+  		]
+  	}
+  }
+  ```
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"title": "First question",
+    	"type": "SELECT"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_a29d00866dc04cc29be7d2ff7a0495b2
+  - id: pair_6800466fbbbc49d0af57f3b8556bcdce
+    name: Accept
+    value: application/json
+    description: ""
+authentication: {}
+metaSortKey: -1680365879551
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
