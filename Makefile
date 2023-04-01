@@ -48,6 +48,7 @@ help:
 install:
 	composer install
 	cd deployment && docker-compose up -d --force-recreate && docker-compose build --force-rm
+	docker exec -it quiz-app cp .env.example .env
 	docker exec -it quiz-app php artisan key:generate
 	docker exec -it quiz-app php artisan migrate
 	exit 0

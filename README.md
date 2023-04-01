@@ -28,7 +28,24 @@ In this small application we want to create the below features:
 - quiz-replier-activity: we will log user's answer 
 
 # Install 
+You can install the project by following the below steps
+1. open the project directory on your terminal
+2. run this command: `make install`
+   1. If you get the DB Error (Mysql gone away) run this command: `make table`
 
+
+> If the make command is not working for you, run the below commands:
+``` 
+composer install
+
+cd deployment && docker-compose up -d --force-recreate && docker-compose build --force-rm
+
+docker exec -it quiz-app cp .env.example .env
+
+docker exec -it quiz-app php artisan key:generate
+
+docker exec -it quiz-app php artisan migrate
+```
 
 # Contributing
 If you want to contribute in this repository you can use the below commands:

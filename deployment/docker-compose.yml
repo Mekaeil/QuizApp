@@ -2,26 +2,7 @@ version: "3.9"
 
 services:
 
-    php:
-        build:
-            args:
-                user: quiz-app
-                uid: 1000
-            context: ./images/php
-            dockerfile: Dockerfile
-        image: quiz-app-php81
-        container_name: php
-        restart: unless-stopped
-        working_dir: /app
-        tty: true
-        volumes:
-            - ../:/app
-            - ./images/php/local.ini:/usr/local/etc/php/conf.d/local.ini
-        networks:
-            - application
-
     quiz-app:
-        image: nginx:1.17-alpine
         container_name: quiz-app
         build:
             context: ./
@@ -33,18 +14,17 @@ services:
         restart: unless-stopped
         volumes:
             - ../:/app
-            - ./images/nginx:/etc/nginx/conf.d
         ports:
-            - "9080:8000"
+            - "9001:8000"
         networks:
             - application
         depends_on:
-            - quiz-db
+            - quizapp-db
 
-    quiz-db:
+    quizapp-db:
         platform: linux/x86_64
         image: mysql:8.0
-        container_name: quiz-db
+        container_name: quizapp-db
         environment:
             MYSQL_DATABASE: quizapp
             MYSQL_USER: admin
@@ -54,12 +34,12 @@ services:
         volumes:
             - ../storage/dbdata:/var/lib/mysql
         ports:
-            - "3309:3306"
+            - "3310:3306"
         networks:
             - application
 
-    queue:
-        container_name: queue
+    quizapp-queue:
+        container_name: quizapp-queue
         build:
             context: ./
             dockerfile: Dockerfile
@@ -73,7 +53,7 @@ services:
         networks:
             - application
         depends_on:
-            - quiz-db
+            - quizapp-db
             - quiz-app
 
 networks:
